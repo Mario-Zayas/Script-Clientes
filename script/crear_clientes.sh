@@ -3,17 +3,15 @@
 # Argumentos
 
 if [ "$#" -ne 3 ]; then
-echo "Uso: $0 nombre_maquina tama_vol red"
+echo "Uso: $0 nombremaquina tamavol nombrered"
 exit 1
 fi
-
-# Variables
 
 nombremaquina="$1"
 tamavol="$2"
 nombrered="$3"
 
-# Plantilla
+# Plantilla de creacion de clientes
 
 # Crear nuevo vol
 
@@ -35,7 +33,7 @@ sudo rm /srv/images/nuevo$nombremaquina.qcow2
 
 # Creacion de maquina
 
-echo "Creando maquina"
+echo "Se va a proceder a crear la maquina, de haber algun fallo, porfavor, revise el script y haga los cambios necesarios"
 
 virt-install --connect qemu:///system \
 --noautoconsole \
@@ -49,8 +47,6 @@ virt-install --connect qemu:///system \
 --network bridge=$nombrered
 
 # Conexión a la maquina
-
-echo "Conectando a maquina"
 
 sudo virt-viewer -c qemu:///system $nombremaquina
 
