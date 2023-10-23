@@ -12,6 +12,6 @@ Para comprobar que funciona:
 
     Crea un nuevo cliente llamado cliente2 que tenga un volumen de 10G y que esté conectado a la red_intra. La instrucción que debes ejecutar será:
 
-     sh crear_clientes.sh cliente2 10G red_intra
+     sh crear_clientes.sh cliente2 10 br-intra
 
     Comprueba que la máquina está funcionando, y que ha tomado direccionamiento de red de forma dinámica.
