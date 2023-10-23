@@ -31,7 +31,7 @@ sudo virt-resize --expand /dev/sda1 /srv/images/nuevo$nombremaquina.qcow2 /srv/i
 
 sudo rm /srv/images/nuevo$nombremaquina.qcow2
 
-# Creacion de maquina
+# Creacion de maquina y conexion de la misma
 
 echo "Se va a proceder a crear la maquina, de haber algun fallo, porfavor, revise el script y haga los cambios necesarios"
 
@@ -45,8 +45,6 @@ virt-install --connect qemu:///system \
 --vcpus 1 \
 --import \
 --network bridge=$nombrered
-
-# Conexión a la maquina
 
 sudo virt-viewer -c qemu:///system $nombremaquina
 
